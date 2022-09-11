@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row justify-content-between ctm-header">
+    <h1>
+      List of users
+    </h1>
+
+    <div class="ctm-btn-container">
+      <button class="btn btn-sm btn-outline-success" (click)="openCreateContact()">
+        Create
+      </button>
+    </div>
+  </div>
+  <table class="table caption-top mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Phone number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Sex</th>
+        <th scope="col" style="display: flex; justify-content: center;">...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts$ | async; let id = index;">
+        <th scope="row">{{id + 1}}</th>
+        <td>{{contact.name}}</td>
+        <td>{{contact.surname}}</td>
+        <td>{{contact.phoneNumber}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.sex}}</td>
+        <td style="display: flex; justify-content: center;">
+          <button type="button" class="btn btn-sm btn-outline-primary" style="margin-right: 0.5rem;"
+            (click)="openEditContact(id)">
+            <fa-icon [icon]="faEdit"></fa-icon>
+            Update
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteContact(id)">
+            <fa-icon [icon]="faDeleteLeft"></fa-icon>
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
