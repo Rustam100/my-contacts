@@ -1,7 +1,7 @@
 # My contacts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
-The NGXS state management library has been applied.
+The [`NGXS`] state management library has been applied.
 
 ## About app
 
